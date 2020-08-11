@@ -1,3 +1,8 @@
+@import "../../CFC/node_modules/font-awesome/scss/font-awesome.scss";
+
+$color1: rgb(69, 69, 126);
+$color2: rgb(88, 88, 158);
+
 /* You can add global styles to this file, and also import other style files */
 .main-form {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -23,22 +28,31 @@
 }
 
 .article.checked{
-    background-color: blue;
+    background-color: $color2;
+    color: white;
     &:hover{
-        background-color: navy;
+        background-color: $color1;
         cursor: pointer;
+    }
+    .help:before {
+        border: none;
+        width: 20px;
+        height: 20px;
     }
 }
 
 .article {
+    display: inline-block;
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
     margin: 10px 10px 10px 10px;
     width: 200px;
-    height: 100px;
-    border-color: navy;
-    
+    height: 70px;
+    border-color: $color1;
+    padding-left: 5px;
+    text-align: center;
+    padding-top: 12px;
     .help:before {
         content: '';
         display: flex;
@@ -47,16 +61,16 @@
         width: 18px;
         height: 18px;
         border-radius: 50%;
-        border: 2px solid navy;
+        border: 2px solid $color1;
         font-size: 15px;
-        color: navy;       
+        color: $color1;       
       }
       #question:before {
         content: '?';
       }
      .help {
         position: relative;
-        top: 75px;
+        top: 45px;
         left: 175px;
         width: 20px;
         height: 20px;
@@ -75,3 +89,20 @@
 }
 
 
+
+.description {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: silver;
+    background-color: salmon;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    
+}
+
+.grey {
+    color: grey ;
+}

@@ -1,4 +1,8 @@
 <div [ngClass]="{'article':  true, 'checked' : checked}" (click)="onPanelClick()">
-    <div class="help" id="question" (click)="onHelpClick($event)">
+    <div class="help" id="question" 
+            (click)="onHelpClick($event)" 
+            (mouseover)="onMouseOver()" 
+            (mouseout)="onMouseOut()">
     </div>
+    {{article.Name}}
 </div>

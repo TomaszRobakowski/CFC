@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ArticleModel } from 'src/app/models/article';
 
 @Component({
   selector: 'app-article',
@@ -8,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class ArticleComponent implements OnInit {
   public checked = false;
   constructor() { }
+
+  @Input() article: ArticleModel;
+  @Output() onHelpEvent = new EventEmitter()
+  @Output() onMouseOverEvent = new EventEmitter()
+  @Output() onMouseOutEvent = new EventEmitter()
 
   ngOnInit(): void {
   }
@@ -19,7 +25,14 @@ export class ArticleComponent implements OnInit {
 
   onHelpClick(event: Event) {
     event.stopPropagation();
-    console.log('onHelpClick')
+    this.onHelpEvent.emit()
   }
 
+  onMouseOver() {
+    this.onMouseOverEvent.emit();
+  }
+
+  onMouseOut(){
+    this.onMouseOutEvent.emit();
+  }
 }

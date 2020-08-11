@@ -1,8 +1,22 @@
 <div class="main-form">
     <div class="header">
         Wybór produktów
+        <span style="float: right;"><i class="fa fa-chevron-up grey"></i></span>
+        
     </div>
     
-    <app-article></app-article>
+    <div *ngIf="Articles" class="form-row">
+        <span *ngFor="let article of Articles">
+            <app-article 
+                [article]="article"
+                (onMouseOverEvent)="onShowDescription(article)"
+                (onMouseOutEvent)="Description = null"
+            ></app-article>
+        </span>
+    </div>
 
+</div>
+
+<div *ngIf="Description" class="description">
+    {{Description}}
 </div>
